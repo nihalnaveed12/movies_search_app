@@ -39,7 +39,7 @@ export default function MovieSearchApp() {
       }
 
       const data = await response.json();
-      if (data.Response === false) {
+      if (data.Response === "False") {
         throw new Error(data.error);
       }
       setMovieDetails(data);
@@ -50,7 +50,7 @@ export default function MovieSearchApp() {
     }
   };
 
-  const handelInputChanges = (e: ChangeEvent<HTMLInputElement>) => {
+  const handelInputChanges = (e: ChangeEvent<HTMLInputElement>):void => {
     setInput(e.target.value);
   };
 
